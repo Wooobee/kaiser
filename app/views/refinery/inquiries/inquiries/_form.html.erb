@@ -1,0 +1,144 @@
+<div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="well well-sm">
+          <%= form_for( [refinery, :inquiries, inquiry], html: { class: "form-horizontal" }) do |f| %>
+  <%= render :partial => "/refinery/admin/error_messages",
+             :locals => {
+               :object => inquiry,
+               :include_object_name => true
+             } %>
+          <form class="form-horizontal" action="" method="post">
+          <fieldset>
+            <legend class="text-center">Ihre Daten</legend>
+
+            <!-- Company input-->
+            <div class="form-group">
+              <%= f.required_label :company, :class => 'placeholder-fallback col-md-3 control-label' %>
+              <div class="col-md-9">
+                <%= f.text_field :company, :class => 'text form-control', :required => 'required',
+      :placeholder => (t('company', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders) %>
+              </div>
+            </div>
+
+            <!-- Name input-->
+            <div class="form-group">
+              <%= f.required_label :name, :class => 'placeholder-fallback col-md-3 control-label' %>
+              <div class="col-md-9">
+                <%= f.text_field :name, :class => 'text form-control', :required => 'required',
+      :placeholder => (t('name', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders) %>
+              </div>
+            </div>
+
+            <!-- Street input-->
+            <div class="form-group">
+              <%= f.required_label :street, :class => 'placeholder-fallback col-md-3 control-label' %>
+              <div class="col-md-9">
+                <%= f.text_field :street, :class => 'text form-control', :required => 'required',
+      :placeholder => (t('street', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders) %>
+              </div>
+            </div>
+
+            <!-- City input-->
+            <div class="form-group">
+              <%= f.required_label :city, :class => 'placeholder-fallback col-md-3 control-label' %>
+              <div class="col-md-9">
+                <%= f.text_field :city, :class => 'text form-control', :required => 'required',
+      :placeholder => (t('city', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders) %>
+              </div>
+            </div>
+
+            <!-- Zip input-->
+            <div class="form-group">
+              <%= f.required_label :zip, :class => 'placeholder-fallback col-md-3 control-label' %>
+              <div class="col-md-9">
+                <%= f.text_field :zip, :class => 'text form-control', :required => 'required',
+      :placeholder => (t('zip', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders) %>
+              </div>
+            </div>
+
+            <!-- Country input-->
+            <div class="form-group">
+              <%= f.required_label :country, :class => 'placeholder-fallback col-md-3 control-label' %>
+              <div class="col-md-9">
+                <%= f.text_field :country, :class => 'text form-control', :required => 'required',
+      :placeholder => (t('country', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders) %>
+              </div>
+            </div>
+
+            <!-- Email input-->
+            <div class="form-group">
+              <%= f.required_label :email, :class => 'placeholder-fallback col-md-3 control-label' %>
+              <div class="col-md-9">
+                <%= f.email_field :email, :class => 'text email  form-control', :required => 'required',
+      :placeholder => (t('email', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders) %>
+              </div>
+            </div>
+
+            <!-- phone input-->
+          <% if Refinery::Inquiries.show_phone_number_field %>
+            <div class="form-group">
+              <%= f.required_label :phone, :class => 'placeholder-fallback col-md-3 control-label' %>
+              <div class="col-md-9">
+                <%= f.email_field :phone, :class => 'text phone  form-control', :required => 'required',
+      :placeholder => (t('phone', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders) %>
+              </div>
+            </div>
+          <% end %>
+
+            <!-- Fax input-->
+            <div class="form-group">
+              <%= f.required_label :fax, :class => 'placeholder-fallback col-md-3 control-label' %>
+              <div class="col-md-9">
+                <%= f.text_field :fax, :class => 'text form-control',
+      :placeholder => (t('fax', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders) %>
+              </div>
+            </div>
+
+            <!-- Room input-->
+            <div class="form-group">
+              <%= f.required_label :room, :class => 'placeholder-fallback col-md-3 control-label' %>
+              <div class="col-md-9">
+                <%= f.collection_select :room, Refinery::Inquiries::Inquiry::ROOMS, :to_s, :to_s, :include_blank => true, :class => 'form-control', :placeholder => (t('room', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders) %>
+              </div>
+            </div>
+
+            <!-- Arrival input-->
+            <div class="form-group">
+              <%= f.required_label :arrival, :class => 'placeholder-fallback col-md-3 control-label' %>
+              <div class="col-md-9">
+                <%= f.date_field :arrival, :class => 'form-control',
+      :placeholder => (t('arrival', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders) %>
+              </div>
+            </div>
+
+            <!-- Departure input-->
+            <div class="form-group">
+              <%= f.required_label :departure, :class => 'placeholder-fallback col-md-3 control-label' %>
+              <div class="col-md-9">
+                <%= f.date_field :departure, :class => 'form-control',
+      :placeholder => (t('departure', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders) %>
+              </div>
+            </div>
+
+            <!-- Message body -->
+            <div class="form-group">
+              <%= f.required_label :message, :class => 'placeholder-fallback col-md-3 control-label' %>
+              <div class="col-md-9">
+                <%= f.text_area :message, :rows => 8, :class => 'form-control', :required => 'required',
+      :placeholder => (t('message', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders) %>
+              </div>
+            </div>
+
+            <!-- Form actions -->
+            <div class="form-group">
+              <div class="col-md-12 text-right">
+                <%= f.submit t('.send'), :class => "btn btn-primary btn-lg" %>
+              </div>
+            </div>
+          </fieldset>
+          <% end %>
+        </div>
+      </div>
+  </div>
+
+

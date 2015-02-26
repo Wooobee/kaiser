@@ -1,0 +1,92 @@
+@font-face {
+  font-family: 'Lavanderia';
+  src: url('myfont-webfont.eot?') format('eot'),
+     url('../fonts/Lavanderia Sturdy.woff') format('woff'),
+     url('myfont-webfont.ttf') format('truetype'),
+     url('myfont-webfont.svg#svgFontName') format('svg');
+}
+
+body{color: black; background:#ffffff;font: 400 12px/1.3em Arial, Tahoma, Verdana, Helvetica;color:#000;margin:0;padding:0}
+
+.page-bg { 
+  color: rgb(255, 255, 255);
+    position: relative;
+    min-height: 350px;
+    background: url("bg.jpg") no-repeat fixed 0px 100% / cover transparent;
+}
+
+
+.page_raster { 
+  z-index: 5;
+  width: 100%;
+  min-height: 100%;
+  background: transparent url("raster.png") repeat;
+  position: absolute;
+}
+
+/* center logo*/
+#logo{
+  position: relative; 
+  width: 340px; 
+  margin: 50px auto; 
+  padding: 20px;
+  clear: both;
+}
+
+
+.header { position: relative; margin: 50px auto; clear:both; background: white; height: 20px; -moz-box-shadow: 0 0 20px black; -webkit-box-shadow: 0 0 20px black; box-shadow: 0 0 20px black;}
+.wrapper { position: relative; margin: 50px auto; padding-left: 0px; padding-right: 0px; padding-bottom: 0px; padding-top: 0px; background: #e6e6e6; -moz-box-shadow: 0 0 20px black; -webkit-box-shadow: 0 0 20px black; box-shadow: 0 0 20px black; }
+
+.footer_boxen { position: relative; margin: 50px auto;   }
+
+#box1{
+  width: 312px;
+  height: 100%;
+  margin-right: 100px;
+  float:left;
+}
+
+#box2{
+  width: 312px;
+  height: 100%;
+  margin-right: 100px;
+  float:left;
+}
+
+
+.footer { position: relative; margin: 50px auto; clear:both; background: white; min-height: 20px; -moz-box-shadow: 0 0 20px black; -webkit-box-shadow: 0 0 20px black; box-shadow: 0 0 20px black;}
+
+
+.copy{
+  color: black;
+  position:relative;
+  margin-left: 20px;
+  top:2px;
+}
+
+.content {   color: black; position: relative; margin: 50px auto; padding-left: 20px; padding-right: 20px; padding-top: 20px; padding-bottom: 1px; background: white; -moz-box-shadow: 0 0 20px black; -webkit-box-shadow: 0 0 20px black; box-shadow: 0 0 20px black; }
+.content p { font: 15px/1.4em Georgia, Serif; margin: 0 0 5px 0; padding-bottom: 19px; text-indent: 0px;}
+
+
+.gallery_list{
+  margin-bottom: 50px;
+
+}
+.info-thumbnail {
+
+margin-bottom:5px;
+}
+
+.info-thumbnail.padding1{
+padding: 1px;
+}
+
+legend {
+padding-bottom: 10px;
+}
+
+.header_login_navbar{
+top: -16px;
+position: relative;
+margin-right: 10px;
+}

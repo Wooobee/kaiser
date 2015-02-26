@@ -1,0 +1,40 @@
+<!-- Language navbar -->
+<div class="navbar-default language-bar header" >
+      <ul class="nav navbar-nav navbar-left header_login_navbar">
+    <%@page.translations.each do |t|%> 
+        <li>
+            <%= link_to "#{image_tag("icons/flags/#{t.locale}.png")}".html_safe, refinery.url_for(:locale => t.locale) %>
+        </li>    
+    <%end%>
+
+      </ul>
+              
+      <ul class="nav navbar-nav navbar-right header_login_navbar">
+        <li><a href="/admin">Login <span class="sr-only">(current)</span></a></li>
+      </ul>
+</div>
+
+<div id="logo">
+   <%= image_tag("logo.png", width: "300px")%>
+</div>
+
+
+<!-- Main navbar -->
+<nav class="navbar navbar-default menu-bar wrapper">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse topmenu">
+      <ul class="nav navbar-nav">
+        <%= Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self).to_html %>              
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container-fluid -->
+</nav>
+

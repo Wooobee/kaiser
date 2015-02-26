@@ -1,0 +1,5 @@
+<% if not @page.images.empty? %>
+  <% @page.images.each do |i| %>
+    <p><%= image_fu i, '500x' %></p>
+  <%end%>
+<%end%>

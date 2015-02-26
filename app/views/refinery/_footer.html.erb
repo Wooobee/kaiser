@@ -1,0 +1,19 @@
+<div class="footer_boxen">
+    <div id="box1">
+      <%= link_to image_tag("Mittagstisch.png"), '/' , :target => "_blank" %>
+    </div>
+    <div id="box2">
+      <%= image_tag("http://www.kaiserdom.de/images/boxen/Box2.png") %>
+    </div>
+    <div id="box3">
+      <%= link_to image_tag("http://www.kaiserdom.de/images/boxen/Box3.png"), 'http://www.kaiserdom.de/de/kaiserdomlauf', :target => "_blank" %>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <div class="footer">
+    <p class="copy">
+  <%= t('.copyright', :year => Time.now.year,
+                      :site_name => Refinery::Core.site_name) %>
+</p>
+  </div>
+

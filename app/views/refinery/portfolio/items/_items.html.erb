@@ -1,0 +1,11 @@
+<%- if items.present? -%>
+  <div class="col-md-offset-2 col-md-12 gallery_list">
+    <div class="row">
+      <% @items.each do |item| %>
+        <%= link_to image_tag(item.image.thumbnail(geometry: '150x150#c').url, :class =>"img-responsive"),
+          item.image.thumbnail(geometry: "600x400").url,
+          :class => 'col-sm-4', "data-toggle" => "lightbox", "data-gallery" => "multiimages", "data-title" => item.title  %>
+       <% end %>
+    </div>
+  </div>
+<%- end -%>
